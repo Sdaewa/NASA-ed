@@ -20,7 +20,7 @@ function updateDOM() {
         const link = document.createElement('a');
         link.href = result.hdurl;
         link.title = 'View Full Image';
-        link.targe = '_blank';
+        link.target = '_blank';
 
         const image = document.createElement('img');
         image.src = result.url;
@@ -31,7 +31,7 @@ function updateDOM() {
         const cardBody = document.createElement('div');
         cardBody.classList.add('card-body');
 
-        const cardTitle = document.createElement('card-title');
+        const cardTitle = document.createElement('h5');
         cardTitle.classList.add('card-title');
         cardTitle.textContent = result.title;
 
@@ -40,7 +40,7 @@ function updateDOM() {
         saveText.textContent = 'Add to favorites';
 
         const cardText = document.createElement('p');
-        card.textContent = result.explanation;
+        cardText.textContent = result.explanation;
 
         const footer = document.createElement('small');
         footer.classList.add('text-muted');
@@ -49,7 +49,7 @@ function updateDOM() {
         date.textContent = result.date;
 
         const copyright = document.createElement('span');
-        copyright.textContent = `${result.copyright}`;
+        copyright.textContent = ` ${result.copyright}`;
 
         footer.append(date, copyright);
         cardBody.append(cardTitle, saveText, cardText, footer);
